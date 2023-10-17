@@ -58,3 +58,13 @@ print(geometry.asWkt())
 vlayer.dataProvider().addFeature(f)
 
 ```
+```python
+vlayer = QgsVectorLayer('Point', 'extent', 'memory')
+QgsProject.instance().addMapLayer(vlayer)
+
+f = QgsFeature()
+geometry = QgsGeometry.fromWkt("POINT(3 4)")
+f.setGeometry(geometry)
+
+vlayer.dataProvider().addFeature(f)
+```
