@@ -42,6 +42,26 @@ iface.helpMenu().addSeparator()
 iface.helpMenu().addAction(show_time_action)
 iface.addToolBarIcon(show_time_action)
 ```
+```python
+w = QDockWidget("My stuff", iface.mainWindow())
+w.setObjectName("My widget")
+
+frame = QFrame()
+w.setWidget(frame)
+
+grid = QGridLayout()
+frame.setLayout(grid)
+
+label = QLabel('Hello there')
+claim = QPushButton('Claim')
+resolve = QPushButton('Resolve')
+
+grid.addWidget(label)
+grid.addWidget(claim)
+grid.addWidget(resolve)
+
+iface.addDockWidget(Qt.RightDockWidgetArea, w)
+```
 ## Http requests
 
 ```python
