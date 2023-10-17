@@ -1,5 +1,6 @@
 # qgis-playground
 
+## UI customization
 ```python
 mb = QMessageBox()
 mb.setText("Result: " + str(iface.browserModel().initialized()))
@@ -21,4 +22,25 @@ raster_menu = iface.rasterMenu()
 menubar = vector_menu.parentWidget()
 menubar.removeAction(vector_menu.menuAction())#.addAction(...)
 menubar.removeAction(raster_menu.menuAction())
+```
+## Http requests
+
+```python
+import requests
+
+url = "http://localhost:3000/api/areaCreation/claim"
+body = "admin@nelson.com"
+headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+}
+mb = QMessageBox()
+#mb.setText(url)
+#mb.exec()
+
+response = requests.post(url=url, headers=headers, data=body)
+mb.setText(str(response.status_code))
+mb.exec()
+mb.setText(str(response.json()["wkt"]))
+mb.exec()
 ```
