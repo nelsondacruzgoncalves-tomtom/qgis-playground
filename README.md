@@ -53,6 +53,8 @@ QgsProject.instance().addMapLayer(vlayer)
 f = QgsFeature()
 geometry = QgsGeometry.fromRect(iface.mapCanvas().extent())
 f.setGeometry(geometry)
+print(geometry.asWkt())
 
 vlayer.dataProvider().addFeature(f)
+
 ```
