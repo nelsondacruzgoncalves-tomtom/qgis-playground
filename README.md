@@ -1,5 +1,8 @@
 # qgis-playground
 
+* https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html
+* https://courses.spatialthoughts.com/pyqgis-in-a-day.html
+
 ## UI customization
 ```python
 mb = QMessageBox()
