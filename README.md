@@ -23,6 +23,22 @@ menubar = vector_menu.parentWidget()
 menubar.removeAction(vector_menu.menuAction())#.addAction(...)
 menubar.removeAction(raster_menu.menuAction())
 ```
+```python
+from datetime import datetime
+
+def show_time():
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    mb = QMessageBox()
+    mb.setText(current_time)
+    mb.exec()
+    
+show_time_action = QAction('Show time')
+show_time_action.triggered.connect(show_time)
+iface.helpMenu().addSeparator()
+iface.helpMenu().addAction(show_time_action)
+iface.addToolBarIcon(show_time_action)
+```
 ## Http requests
 
 ```python
