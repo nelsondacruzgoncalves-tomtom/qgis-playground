@@ -44,3 +44,15 @@ mb.exec()
 mb.setText(str(response.json()["wkt"]))
 mb.exec()
 ```
+## Layers and features
+
+```python
+vlayer = QgsVectorLayer('Polygon', 'extent', 'memory')
+QgsProject.instance().addMapLayer(vlayer)
+
+f = QgsFeature()
+geometry = QgsGeometry.fromRect(iface.mapCanvas().extent())
+f.setGeometry(geometry)
+
+vlayer.dataProvider().addFeature(f)
+```
