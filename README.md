@@ -84,3 +84,18 @@ f.setGeometry(geometry)
 
 vlayer.dataProvider().addFeature(f)
 ```
+## Event tracking
+```python
+def extentsChanged():
+    extent = iface.mapCanvas().extent()
+    print(str(extent))
+
+iface.mapCanvas().extentsChanged.connect(extentsChanged)
+#iface.mapCanvas().extentsChanged.disconnect()
+
+extent = iface.mapCanvas().extent()
+
+mb = QMessageBox()
+mb.setText(str(extent))
+mb.exec()
+```
