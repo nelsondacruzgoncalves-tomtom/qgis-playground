@@ -123,3 +123,17 @@ mb = QMessageBox()
 mb.setText(str(extent))
 mb.exec()
 ```
+## Installing python packages
+```python
+import pip
+pip.main(['install', 'ms-active-directory'])
+
+from ms_active_directory import ADDomain
+domain = ADDomain('example.com')
+
+session = domain.create_session_as_user('username@example.com', 'password')
+```
+```
+ERROR: Could not install packages due to an OSError: [WinError 5] Access is denied: 'C:\\PROGRA~1\\QGIS32~1.9\\apps\\Python39\\Lib\\site-packages\\Crypto'
+Consider using the `--user` option or check the permissions.
+```
