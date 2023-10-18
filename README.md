@@ -141,12 +141,13 @@ domain = ADDomain('example.com')
 
 session = domain.create_session_as_user('username@example.com', 'password')
 ```
-```
+```log
 ERROR: Could not install packages due to an OSError: [WinError 5] Access is denied: 'C:\\PROGRA~1\\QGIS32~1.9\\apps\\Python39\\Lib\\site-packages\\Crypto'
 Consider using the `--user` option or check the permissions.
 ```
+Installation will mark `site-packages` as read only. Need to change that manually.
 ```python
 import subprocess
 res = subprocess.check_call(['python', '-m', 'pip', 'install', 'ms-active-directory'])
-print(res)
+print(res) # should be 0
 ```
