@@ -125,6 +125,13 @@ mb.setText(str(extent))
 mb.exec()
 ```
 ## Installing python packages
+
+### From OSGeo4W Shell
+```shell
+python -m pip install ms-active-directory
+```
+
+### From Qgis
 ```python
 import pip
 pip.main(['install', 'ms-active-directory'])
