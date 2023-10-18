@@ -3,6 +3,7 @@
 * https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html
 * https://courses.spatialthoughts.com/pyqgis-in-a-day.html
 * https://landscapearchaeology.org/2018/installing-python-packages-in-qgis-3-for-windows/
+* https://pypi.org/project/ms-active-directory/
 
 ## UI customization
 ```python
